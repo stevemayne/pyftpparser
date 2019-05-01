@@ -1,7 +1,7 @@
 #name, size, _sizetype, mtime, _mtimetype, cwd, retr, _id, _idtype, islink
 
 import unittest
-from ftp_parser import parse
+from ftpparser import parse
 import datetime
 
 DATE_OF_TEST = datetime.datetime(year=2000, month=6, day=1)

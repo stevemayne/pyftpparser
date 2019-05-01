@@ -1,5 +1,5 @@
 import unittest
-from ftp_parser import parse_time
+from ftpparser import parse_time
 import datetime
 
 DATE_OF_TEST = datetime.datetime(year=2000, month=6, day=1, tzinfo=datetime.timezone.utc)
