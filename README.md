@@ -1,0 +1,1 @@
+ftp_parser is a simple library for parsing FTP LIST results for a variety of FTP server formats 
