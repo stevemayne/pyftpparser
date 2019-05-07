@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="ftpparser",
-    version="0.0.2",
+    version="0.0.3",
     author="Steve Mayne",
     author_email="steve.mayne@gmail.com",
     description="FTP LIST parsing library",

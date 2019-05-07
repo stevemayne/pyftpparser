@@ -85,7 +85,7 @@ class FTPParser(object):
                 islink = 1
                 # handle symlink
                 try:
-                    m_name, _link = m_name.split(" -> ")
+                    name, _link = name.split(" -> ")
                 except ValueError:
                     pass
             mtime = parse_time(date, now)
@@ -165,7 +165,7 @@ class FTPParser(object):
                 except ValueError:
                     size = 0
         
-            mtime = parse_time(date, now).timestamp()
+            mtime = int(parse_time(date, now).timestamp())
 
             return name, size, mtime, trycwd, tryretr, 0, None
         
@@ -176,13 +176,13 @@ class FTPParser(object):
 
     def _init_re(self):
         self.unix_re = re.compile("^([-bcdlps])" # type
-            "([-rwxXsStT]{9})" # permissions
+            "([-rwxXsStT]{1,9})" # permissions
             "\\s+(\\d+)" # hard link count
             "\\s+(\\w+)" # owner
             "\\s+(\\w+)" # group
             "\\s+(\\d+)" # size
             "\\s+([A-Za-z]{3}\\s+\\d{1,2}\\s+[:\\d]{4,5})" # modification date
-            "\\s+(.+)$" # name
+            "\\s(.+)$" # name
         )
 
         # Regex for NetWare listing formats 
